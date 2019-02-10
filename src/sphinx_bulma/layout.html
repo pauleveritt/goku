@@ -1,4 +1,4 @@
-{%- extends "basic/layout.html" %}
+{%- extends "basic_layout.html" %}
 
 {%- block extrahead %}
 {{ super() }}
@@ -43,7 +43,6 @@
 {%- block content %}
 {%- if theme_fixed_sidebar|lower == 'true' %}
 <div class="document">
-<h1>XXXXX</h1>
     {{ sidebar() }}
     {%- block document %}
     <div class="documentwrapper">
