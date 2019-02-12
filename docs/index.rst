@@ -29,6 +29,8 @@ Contents
 .. toctree::
    :maxdepth: 2
 
+   Why <why>
+   Steps <steps/index>
    License <license>
    Authors <authors>
    Changelog <changelog>
