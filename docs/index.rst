@@ -1,8 +1,8 @@
 ============
-sphinx_bulma
+goku
 ============
 
-This is the documentation of **sphinx_bulma**.
+This is the documentation of **goku**.
 
 .. note::
 

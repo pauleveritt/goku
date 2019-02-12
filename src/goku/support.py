@@ -18,7 +18,7 @@ from pygments.token import (
 
 
 # Originally based on FlaskyStyle which was based on 'tango'.
-class SphinxBulma(Style):
+class Goku(Style):
     background_color = "#f8f8f8"  # doesn't seem to override CSS 'pre' styling?
     default_style = ""
 

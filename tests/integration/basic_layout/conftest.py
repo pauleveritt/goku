@@ -31,7 +31,7 @@ class Renderer:
 
 @pytest.fixture(scope='session')
 def env():
-    with resources.open_text('sphinx_bulma', 'basic_layout.html') as f:
+    with resources.open_text('goku', 'basic_layout.html') as f:
         basic_layout = f.read()
     loader = DictLoader({
         'basic_layout.html': basic_layout

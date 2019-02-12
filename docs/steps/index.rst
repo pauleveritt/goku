@@ -8,6 +8,6 @@ Contents
 .. toctree::
    :maxdepth: 2
 
-    Preparation <preparation>
-    Copy Alabaster <copy_alabaster>
-
+   Preparation <preparation>
+   Copy Alabaster <copy_alabaster>
+   research_api

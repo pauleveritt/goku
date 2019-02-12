@@ -1,4 +1,4 @@
-extensions = ['sphinx_bulma']
+extensions = ['goku']
 
 # The rest is normal Sphinx stuff
 master_doc = 'index'
