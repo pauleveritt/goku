@@ -4,10 +4,14 @@ Why
 
 - Modern, responsive, lean CSS framework (Bulma)
 
+    - Lighthouse, PRPL, PWA, etc.
+
 - Extensive testing
 
     - Add CSS selector info to make testing each surface area point
       via pytest sphinx fixtures easier
+
+- Static analysis
 
 - Re-built base templates that are far easier to work with
 
