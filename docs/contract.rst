@@ -24,8 +24,8 @@ To Do
 
 *A place to keep track of discovered-contracts which need digestion.*
 
-`basic_layout.html`
--------------------
+``basic_layout.html``
+---------------------
 
 - html5_doctype
 
@@ -55,4 +55,14 @@ To Do
 
 - document block
 
--
+
+Alabaster ``layout.html``
+-------------------------
+
+- theme_touch_icon
+
+- relbar stuff
+
+- theme_github_banner
+
+- theme_analytics_id

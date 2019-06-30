@@ -26,6 +26,8 @@ Why
 - Concept of customizable resource types, each with data, logic, annd
   templating
 
+- Sphinx templating has lots of machinery for placing this box in that place, all of which is now very different with flexbox.
+
 Longer Term
 ===========
 

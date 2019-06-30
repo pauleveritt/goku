@@ -97,3 +97,32 @@ Here's how I do it:
 
 - I have a run configuration that runs Python's built-in web server on the ``var`` directory.
   This lets me bring up the browser sometimes when I need to poke around.
+
+Switching to Alabaster
+======================
+
+I'll now switch to the Alabaster ``layout.html`` and write tests for Jinja2 logic that it has, before switching back to look at ``theme.conf`` knobs for both.
+
+Lots of Uglyisms
+================
+
+Going through this process is a reminder of why I'm going through this process:
+
+- All these magically-appearing variables:
+
+    - Global context?
+
+    - Basic theme config value? Alabaster theme config value?
+
+    - Jinja2 ``set``?
+
+- Lots of logic, fairly complex, in a template:
+
+    - Filters to convert values to boolean
+
+Theme Analytics
+===============
+
+Alabaster's ``layout.html`` has a theme configuration knob for ``theme_analytics_id``.
+If set, then a ``<script>`` gets added to the footer with some Google Analytics info.
+To make it more testable, I *added a class*.

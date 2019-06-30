@@ -63,7 +63,6 @@ class TestBasicLayoutDefaults:
         nodes: List[Tag] = page.find_all('link', attrs=dict(rel='stylesheet'))
         assert '_static/goku.css' == nodes[0]['href']
         assert '_static/pygments.css' == nodes[1]['href']
-        assert '_static/custom.css' == nodes[2]['href']
 
     def test_html_tag(self, page):
         """ Use default for top-level html node """
@@ -125,38 +124,3 @@ class TestBasicLayoutDefaults:
         # Skip over the text node
         first_child = body.contents[1]
         assert 'div' == first_child.name
-
-    def test_document_block(self, page):
-        """ The basic theme has a block with some logic in it """
-
-        # render_sidebar is Jinja2 var derived from configuration, defaults to false """
-        assert not page.select('div.bodywraper')
-
-        # A div with class and role
-        assert 'main' == page.find('div', attrs={'class': 'body'})['role']
-
-    def test_footer(self, page):
-        """ The footer block """
-
-        footer: Tag = page.find('div', attrs={'class': 'footer'})
-        assert footer
-
-        # See if some of the text nodes and children are present and translated
-        assert '©' in footer.contents[0]
-        assert 'http://sphinx-doc.org/' == footer.contents[1]['href']
-        assert 'Sphinx' in footer.contents[1].text
-
-        # Project name and link should be next
-        assert 'https://github.com/pauleveritt/goku' == footer.contents[3]['href']
-        assert 'Goku' in footer.contents[3].text
-
-        # Page source
-        assert '_sources/index.rst.txt' == footer.contents[5]['href']
-        assert 'Page source' == footer.contents[5].text
-
-
-@pytest.mark.parametrize('page', ['hellopage.html', ], indirect=True)
-class TestBasicLayoutPageDefaults:
-    """ A sub-page, not the index page """
-
-    pass
