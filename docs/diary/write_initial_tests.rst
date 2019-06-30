@@ -163,5 +163,7 @@ Kind of sucks that these sidebars aren't enclosed in a ``<div>`` with a unique c
 
 I'm not testing all 3 variations (donate_url, opencollective, tidelift) on the heading.
 
+As an aside, about ``alabaster.support``...look, it's yet another little framework.
+
 
 

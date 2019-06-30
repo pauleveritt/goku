@@ -7,9 +7,9 @@ from bs4.element import Tag
 pytestmark = pytest.mark.sphinx('html', testroot='alabaster-sidebars')
 
 
-# *** NOTE: We are using ``hellopage.html`` to get some of the navigation
-# in the sidebars.
-@pytest.mark.parametrize('page', ['hellopage.html', ], indirect=True)
+# *** NOTE: We are using ``subdir/subfile.html`` to get some of the
+# navigation in the sidebars.
+@pytest.mark.parametrize('page', ['subdir/subfile.html', ], indirect=True)
 class TestAlabasterSidebars:
     """ Turn on the Alabaster-recommended html_sidebars """
 
@@ -18,10 +18,10 @@ class TestAlabasterSidebars:
         assert logo
 
         # The href on the link
-        assert 'index.html' == logo.find('a')['href']
+        assert '../index.html' == logo.find('a')['href']
 
         # img path
-        assert '_static/python-logo.png' == logo.find('img')['src']
+        assert '../_static/python-logo.png' == logo.find('img')['src']
 
         # heading
         assert 'Goku Sidebars' == logo.find('h1').text
@@ -72,3 +72,43 @@ class TestAlabasterSidebars:
 
         assert 'Tidelift Subscription' in link.text
 
+    def test_navigation(self, page):
+        toctree: Tag = page.select_one('ul.current')
+        assert toctree
+
+        # Should have two top-level items in it
+        nodes = toctree.find_all('li')
+        assert 3 == len(nodes)
+
+        # First
+        assert ['toctree-l1'] == nodes[0]['class']
+        assert '../hellopage.html' == nodes[0].find('a')['href']
+        assert 'Hello Page' == nodes[0].find('a').text
+
+        # Second
+        assert ['toctree-l1', 'current'] == nodes[1]['class']
+        assert 'index.html' == nodes[1].find('a')['href']
+        assert 'Subdir' == nodes[1].find('a').text
+
+        # Third
+        assert ['toctree-l2', 'current'] == nodes[2]['class']
+        assert '#' == nodes[2].find('a')['href']
+        assert 'Subfile' == nodes[2].find('a').text
+
+    def test_extra_nav_links(self, page):
+        extra: Tag = page.find('a', attrs=dict(href='extra1'))
+        assert 'Extra' == extra.text
+
+    def test_relations_heading(self, page):
+        # Relations is display: none but let's test it anyway
+        relations: Tag = page.select_one('div.relations')
+        assert 'Related Topics' == relations.find('h3').text
+
+        # Entries
+        entries = relations.find_all('a')
+        assert '../index.html' == entries[0]['href']
+        assert 'Documentation overview' == entries[0].text
+        assert 'index.html' == entries[1]['href']
+        assert 'Subdir' == entries[1].text
+        assert 'index.html' == entries[2]['href']
+        assert 'Subdir' == entries[2].text

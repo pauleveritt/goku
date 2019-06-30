@@ -33,4 +33,7 @@ html_theme_options = dict(
     donate_url='donate_url1',
     opencollective='opencollective1',
     tidelift_url='tidelift_url1',
+    extra_nav_links=dict(
+        Extra='extra1'
+    )
 )
