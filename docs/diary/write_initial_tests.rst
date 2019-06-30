@@ -156,3 +156,12 @@ About
 This sidebar is one that Alabaster recommends as mandatory.
 I included it (along with the others) then set ``html_static_path``, made a ``_static`` directory in the test root with the Python logo, and added an ``html_theme_options`` with the logo filename.
 
+Donate
+------
+
+Kind of sucks that these sidebars aren't enclosed in a ``<div>`` with a unique class or something else for CSS and for test writing...as noted in the template comment at the top.
+
+I'm not testing all 3 variations (donate_url, opencollective, tidelift) on the heading.
+
+
+

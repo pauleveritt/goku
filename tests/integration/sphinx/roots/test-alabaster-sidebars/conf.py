@@ -30,4 +30,7 @@ html_theme_options = dict(
     travis_button='true',
     badge_branch='badge_branch1',
     codecov_button='true',
+    donate_url='donate_url1',
+    opencollective='opencollective1',
+    tidelift_url='tidelift_url1',
 )
