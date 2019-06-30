@@ -1,4 +1,5 @@
 extensions = ['goku']
+html_theme = 'goku'
 
 # The rest is normal Sphinx stuff
 master_doc = 'index'

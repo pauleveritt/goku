@@ -16,4 +16,12 @@
 
 ## Eventually
 
+- Put the theme templates in a `templates` directory
+
+- Digest the Sphinx move to html5 templates and use those
+
+- Code quality tools integrated into IDE/hooks/CI:
+
+    - HTML, CSS, JS, Python (black, mypy)
+
 ## Done
