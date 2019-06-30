@@ -126,3 +126,33 @@ Theme Analytics
 Alabaster's ``layout.html`` has a theme configuration knob for ``theme_analytics_id``.
 If set, then a ``<script>`` gets added to the footer with some Google Analytics info.
 To make it more testable, I *added a class*.
+
+Theme Customization Options
+===========================
+
+Sphinx uses a customization approach where a theme package supplies a ``theme.conf`` file defining all the customization options.
+This file is in an INI format and can "extend" another theme, thus inheriting those options.
+Each knob can supply a default value.
+
+While clever, it is another case of Sphinx machinery that could be better done with modern Python:
+
+- The custom ``extends`` approach to inheritance is wonky
+
+- Everything is a string (INI file), so converting into types is something often done in Jinja2 (!!)
+
+- No real validation
+
+- No way to have computed values
+
+Sidebars
+========
+
+Alabaster recommends turning on a set of sidebars.
+I did so, then made a test root for sidebars and a test file.
+
+About
+-----
+
+This sidebar is one that Alabaster recommends as mandatory.
+I included it (along with the others) then set ``html_static_path``, made a ``_static`` directory in the test root with the Python logo, and added an ``html_theme_options`` with the logo filename.
+
