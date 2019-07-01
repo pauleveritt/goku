@@ -2,8 +2,6 @@
 
 ## Now
 
-- Start a diary
-
 ## Next
 
 - Fix names generated in _build/_static e.g. sphinx_bulma.css -> goku.css
@@ -14,13 +12,19 @@
 
 ## Soon
 
+- .css_t contracts
+
 - Write tests for:
 
   - All the blocks here: http://www.sphinx-doc.org/en/stable/templating.html
   
   - All the knobs here: https://alabaster.readthedocs.io/en/latest/customization.html
 
+- Get rid of all the ``theme.conf`` knobs for adjusting style colors etc.
+
 ## Eventually
+
+- Instead of inheriting ``theme.conf`` settings (from either alabaster or basic), flatten the universe
 
 - Put the theme templates in a `templates` directory
 
@@ -31,3 +35,6 @@
     - HTML, CSS, JS, Python (black, mypy)
 
 ## Done
+
+- Start a diary
+

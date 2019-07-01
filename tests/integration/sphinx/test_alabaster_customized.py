@@ -14,3 +14,13 @@ class TestAlabasterCustomized:
     def test_touch_icon(self, page):
         icon: Tag = page.find('link', attrs=dict(rel='apple-touch-icon'))
         assert '../_static/touch_icon1' == icon['href']
+
+    def test_canonical_url(self, page):
+        link: Tag = page.find('link', attrs=dict(rel='canonical'))
+        assert 'canonical_url1subdir/subfile.html' == link['href']
+
+    def test_footer_github_banner(self, page):
+        """ Display "fork me", off by default """
+
+        github: Tag = page.select_one('a.github')
+        assert 'https://github.com/github_user1/github_repo1' == github['href']

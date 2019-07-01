@@ -14,6 +14,8 @@ Keep
 Drop
 ====
 
+- Don't have ``theme.conf`` options for litany of colors (likely move that to SCSS)
+
 `basic_layout.html`
 -------------------
 

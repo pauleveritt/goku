@@ -165,5 +165,16 @@ I'm not testing all 3 variations (donate_url, opencollective, tidelift) on the h
 
 As an aside, about ``alabaster.support``...look, it's yet another little framework.
 
+Fixed Sidebar
+=============
 
+No matter what I did, I couldn't get the theme option's ``if`` to fail.
+It was always executing.
+Likely a simple thing, so I skipped it.
+
+Gratipay
+========
+
+Looks like this is removed but still in the ``theme.conf``.
+Ignoring.
 
