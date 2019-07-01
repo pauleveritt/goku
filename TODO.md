@@ -14,6 +14,12 @@
 
 ## Soon
 
+- Write tests for:
+
+  - All the blocks here: http://www.sphinx-doc.org/en/stable/templating.html
+  
+  - All the knobs here: https://alabaster.readthedocs.io/en/latest/customization.html
+
 ## Eventually
 
 - Put the theme templates in a `templates` directory
