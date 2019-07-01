@@ -21,10 +21,6 @@ class TestBasicLayoutDefaults:
     def test_reldelim(self, page):
         node = page.select_one('.nav-item-0')
         assert node is None
-        # # rdelim1
-        # element: Tag = page.select_one('.nav-item nav-item-0 a')
-        # content = element.get_text().strip()
-        # assert 9 == content
 
     def test_url_root(self, page):
         """ Jinja2 variable defined at top of basic_layout """
