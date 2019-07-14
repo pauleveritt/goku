@@ -1,19 +1,22 @@
+"""
+
+Test the optional sidebars in the basic theme as well as the modindex
+and other generated pages.
+
+"""
 import pytest
 from bs4.element import Tag
-
-# The default values for all theme options, knobs, templates, etc.
-# Nothing customized in conf.py or anywhere else.
 
 pytestmark = pytest.mark.sphinx('html', testroot='basic-sidebars')
 
 
-@pytest.mark.parametrize('page', ['index.html', ], indirect=True)
-class TestBasicSidebars:
+@pytest.mark.parametrize('page', ['genindex.html', ], indirect=True)
+class TestBasicGenindex:
     """ Turn on the optional html_sidebars in the basic theme """
 
-    def test_about_logo(self, page):
-        logo: Tag = page.select_one('p.logo')
-        assert logo
+    def test_heading(self, page):
+        heading: Tag = page.select_one('h1#index')
+        assert heading
 
         # The href on the link
-        assert '../index.html' == logo.find('a')['href']
+        assert 'Index' == heading.text
