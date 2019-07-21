@@ -1,3 +1,4 @@
+import bs4
 import pytest
 from bs4.element import Tag
 
@@ -42,13 +43,18 @@ class TestAlabasterCustomized:
         assert 'Subdir' == first_link.text
 
     def test_relbar_top(self, page):
-        """theme_show_relbar_top is True, jumps into macro rellink_markup"""
+        """show_relbar_top is True, jumps into macro rellink_markup"""
 
         relbar_top: Tag = page.find('div', attrs={'data-testid': 'theme_relbar_top'})
         assert relbar_top
 
         assert 1 == len(relbar_top.find_all('a'))
-        first_link: Tag = relbar_top.find('a')
-        assert 'index.html' == first_link['href']
-        assert 'Previous document' == first_link['title']
-        assert 'Subdir' == first_link.text
+        this_link: Tag = relbar_top.find('a')
+        assert 'Subdir' == this_link.text
+        assert 'Previous document' == this_link['title']
+        assert 'index.html' == this_link['href']
+
+    def test_doctype(self, page):
+        doctype = [item for item in page.contents if isinstance(item, bs4.Doctype)][0]
+        assert 'html' == doctype
+

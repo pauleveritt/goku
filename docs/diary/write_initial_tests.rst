@@ -197,3 +197,29 @@ And finally, BeautifulSoup makes it easy to find on these.
 
 I decided to switch to this pattern starting here, with tests for ``analytics_id`` and finishing the ``alabaster/theme.conf`` contract.
 
+``toctree``
+===========
+
+It could use some tests.
+But it probably already has some tests, and it isn't affected by anything in alabaster (except perhaps CSS.)
+
+``html5``
+=========
+
+This line in ``basic/layout.html`` is fun::
+
+    {%- block doctype -%}{%- if html5_doctype %}
+        <!DOCTYPE html>
+
+Where does ``html5_doctype`` come from?
+It's not a ``theme.conf`` value.
+Fortunately it's an easy grep away, in ``StandaloneHTMLBuilder``::
+
+            html5_doctype = self.config.html_experimental_html5_writer and html5_ready,
+
+Dang, the ol' Sphinx headfake again.
+And can't use my IDEs "goto declaration" since ``self.config`` is a head-fake, plus there's two choices.
+Turns out it is related to a ``docutils`` version being 0.13 or higher.
+Doesn't matter, though, it is ``False`` by default and deprecated in Sphinx 2.0, thus for Alabaster, it's always going to be the old XHTML doctype, unless you fill the ``doctype`` *block*, instead of changing it by configuration.
+
+Still, Sphinx has some mega-fossils internally with all this HTML5 noise.

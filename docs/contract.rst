@@ -13,40 +13,64 @@ These all have tests asserting they should be there in goku.
 
 - `custom.css` can be added after the theme CSS and pygments
 
-- Alabaster ``theme.conf`` settings
+``basic/theme.conf`` settings
+-----------------------------
 
-    - analytics_id, badge_branch, canonical_url, codecov_button, description, donate_url, extra_nav_links
+- html5_doctype
 
-    - github: banner, button, count, repo, type, user
+``alabaster/theme.conf`` settings
+---------------------------------
 
-    - logo and logo_name
+- analytics_id, badge_branch, canonical_url, codecov_button, description, donate_url, extra_nav_links
 
-    - opencollective
+- github: banner, button, count, repo, type, user
 
-    - show_powered_by
+- logo and logo_name
+
+- opencollective
+
+- show_powered_by
+
+- tidelift_url
+
+- touch_icon
+
+- travis_button
+
+Alabaster Jinja2 blocks
+-----------------------
+
+- doctype
+
+-
 
 Drop
 ====
 
-- Alabaster ``theme.conf`` settings (most things moved to SCSS)
+``theme.conf`` settings
+-----------------------
 
-    - Litany of colors
+(Most things moved to SCSS)
 
-    - description_font_style
+- Litany of colors
 
-    - fixed_sidebar
+- description_font_style
 
-    - gittip
+- fixed_sidebar
 
-    - gratipay (couldn't find an actual usage of that knob)
+- gittip
 
-    - logo_text_align
+- gratipay (couldn't find an actual usage of that knob)
 
-    - opencollective_button_color
+- logo_text_align
 
-    - page_width
+- opencollective_button_color
 
-    - relborder
+- page_width
+
+- relborder
+
+- sidebar_width
 
 `basic_layout.html`
 -------------------
@@ -60,8 +84,6 @@ To Do
 
 ``basic_layout.html``
 ---------------------
-
-- html5_doctype
 
 - Various macros for sidebars, etc.
 
