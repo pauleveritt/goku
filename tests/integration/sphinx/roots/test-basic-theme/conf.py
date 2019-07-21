@@ -5,3 +5,4 @@ html_theme = 'goku'
 master_doc = 'index'
 html_title = ''
 exclude_patterns = ['_build']
+templates_path = ['_templates']

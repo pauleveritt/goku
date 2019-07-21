@@ -18,6 +18,6 @@ class TestBasicCustomizedBlocks:
             ('sidebarlogo', 'sidebarlogo1'),
         ]
     )
-    def test_linktags(self, page, target, expected):
+    def test_blocks(self, page, target, expected):
         t: Tag = page.find(attrs={'data-testid': f'block-{target}'})
         assert expected == t.text

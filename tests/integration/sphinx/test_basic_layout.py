@@ -120,3 +120,97 @@ class TestBasicLayoutDefaults:
         # Skip over the text node
         first_child = body.contents[1]
         assert 'div' == first_child.name
+
+
+@pytest.mark.parametrize('page', ['index.html', ], indirect=True)
+class TestBasicThemeHelpers:
+    """ Helper Functions as defined in docs """
+
+    # www.sphinx-doc.org/en/master/templating.html#helper-functions
+
+    @pytest.mark.parametrize(
+        'target, expected',
+        [
+            ('pathto', 'hellopage.html'),
+            ('pathto1', '_static/python-logo.png'),
+            ('hasdoc', 'True'),
+        ]
+    )
+    def test_blocks(self, page, target, expected):
+        t: Tag = page.find('div', attrs={'data-testid': f'helper-{target}'})
+        assert expected == t.text
+
+    def test_sidebar(self, page):
+        sidebar: Tag = page.find('div', attrs={'data-testid': 'helper-sidebar'})
+        assert 'sphinxsidebar' in str(sidebar)
+
+
+@pytest.mark.parametrize('page', ['index.html', ], indirect=True)
+class TestBasicThemeGlobals:
+    """ Ensure the global variables are present """
+
+    # www.sphinx-doc.org/en/master/templating.html#global-variables
+
+    @pytest.mark.parametrize(
+        'target, expected',
+        [
+            ('builder', 'html'),
+            ('copyright', ''),
+            ('docstitle', ''),
+            ('embedded', 'False'),
+            ('favicon', ''),
+            ('file_suffix', '.html'),
+            ('has_source', 'True'),
+            ('language', 'None'),
+            ('last_updated', 'None'),
+            ('logo', ''),
+            ('master_doc', 'index'),
+            ('pagename', 'index'),
+            ('project', 'Python'),
+            ('release', ''),
+            ('shorttitle', ''),
+            ('show_source', 'True'),
+            ('style', 'goku.css'),
+            ('title', 'Hello World'),
+            ('use_opensearch', ''),
+            ('version', ''),
+        ]
+    )
+    def test_globals(self, page, target, expected):
+        t: Tag = page.find('div', attrs={'data-testid': f'global-{target}'})
+        assert expected == t.text
+
+    def test_rellinks(self, page):
+        t: Tag = page.find('div', attrs={'data-testid': f'global-rellinks'})
+        assert 'genindex' in t.text
+
+    def test_sphinx_version(self, page):
+        t: Tag = page.find('div', attrs={'data-testid': f'global-sphinx_version'})
+        assert t.text.startswith('1')
+
+@pytest.mark.parametrize('page', ['index.html', ], indirect=True)
+class TestBasicThemePage:
+    """ Ensure the page variables are present """
+
+    # www.sphinx-doc.org/en/master/templating.html#global-variables
+
+    @pytest.mark.parametrize(
+        'target, expected',
+        [
+            ('body', '\nHello World¶\n\n\nHello Page\n\n\n\n'),
+            ('display_toc', 'False'),
+            ('meta', '{}'),
+            ('metatags', ''),
+            ('next', "{'link': 'hellopage.html', 'title': 'Hello Page'}"),
+            ('page_source_suffix', '.rst'),
+            ('parents', '[]'),
+            ('prev', 'None'),
+            ('sourcename', 'index.rst.txt'),
+            ('title', 'Hello World'),
+            ('toc', '\nHello World\n\n'),
+            ('toctree', '\nHello Page\n\n'),
+        ]
+    )
+    def test_globals(self, page, target, expected):
+        t: Tag = page.find('div', attrs={'data-testid': f'page-{target}'})
+        assert expected == t.text
