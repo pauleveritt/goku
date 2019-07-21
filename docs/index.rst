@@ -18,3 +18,13 @@ Contents
    Authors <authors>
    Changelog <changelog>
    Module Reference <api/modules>
+
+Indices and tables
+==================
+
+.. only:: builder_html
+
+   * :ref:`genindex`
+   * :ref:`modindex`
+   * :ref:`search`
+   * :ref:`glossary`
