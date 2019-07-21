@@ -184,3 +184,15 @@ Indices
 Sphinx has a number of common automatically-generated "index" pages: ``genindex``, ``modindex``, ``search``, ``glossary``.
 I set up a test root that enabled all of these, then wrote some tests.
 Setting this up included the ``sys.path`` dance needed for Sphinx to see local source directories.
+As it turned out, doing tests for ``sphinx-apidoc`` stuff was going to require figuring out how to get the fixture to run it.
+Since I don't need it for M1 (using on my own blog) I decided to postpone this.
+
+``data-testid``
+===============
+
+Kent Dodd's `Testing Library <https://testing-library.com/>`_ has an interesting convention: use a ``data-testid`` attribute on all the places you are testing.
+It makes it clear what is part of the test contract.
+You don't put weird classes or ids in just for testing, nor rely on a node structure that might change.
+And finally, BeautifulSoup makes it easy to find on these.
+
+I decided to switch to this pattern starting here, with tests for ``analytics_id`` and finishing the ``alabaster/theme.conf`` contract.

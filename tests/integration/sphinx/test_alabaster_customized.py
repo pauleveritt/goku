@@ -24,3 +24,7 @@ class TestAlabasterCustomized:
 
         github: Tag = page.select_one('a.github')
         assert 'https://github.com/github_user1/github_repo1' == github['href']
+
+    def test_analytics_id(self, page):
+        analytics_id: Tag = page.find(attrs={'data-testid': 'theme_analytics_id'})
+        assert 'analytics_id1' in analytics_id.text

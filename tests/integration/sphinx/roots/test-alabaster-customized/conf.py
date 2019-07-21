@@ -19,6 +19,7 @@ html_sidebars = {
 
 html_static_path = ['_static']
 html_theme_options = dict(
+    analytics_id='analytics_id1',
     logo='python-logo.png',
     logo_name='true',
     description='description1',
