@@ -34,9 +34,6 @@ html_theme_options = dict(
     donate_url='donate_url1',
     opencollective='opencollective1',
     tidelift_url='tidelift_url1',
-    extra_nav_links=dict(
-        Extra='extra1'
-    ),
     touch_icon='touch_icon1',
     canonical_url='canonical_url1',
     github_banner='true',
