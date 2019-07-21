@@ -3,3 +3,27 @@
 {% block doctype %}
     <!DOCTYPE html>
 {% endblock %}
+
+{% block extrahead %}
+    {{ super() }}
+    <link rel="author" href="http://author1" data-testid="extrahead"/>
+{% endblock %}
+
+{% block relbar1 %}
+    <div data-testid="block-relbar1">relbar1</div>
+{% endblock %}
+
+{% block relbar2 %}
+    <div data-testid="block-relbar2">relbar2</div>
+{% endblock %}
+
+{% block content %}
+    {{ super() }}
+    <div data-testid="block-content">content1</div>
+{% endblock %}
+
+{% block footer %}
+    {{ super() }}
+    <div data-testid="block-footer">footer1</div>
+{% endblock %}
+

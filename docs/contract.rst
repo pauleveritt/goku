@@ -42,13 +42,21 @@ Alabaster Jinja2 blocks
 
 - doctype
 
--
+- extrahead
+
+- relbar1
+
+- relbar2
+
+- content
+
+- footer
 
 Drop
 ====
 
-``theme.conf`` settings
------------------------
+``alabaster/theme.conf`` settings
+---------------------------------
 
 (Most things moved to SCSS)
 
@@ -71,6 +79,11 @@ Drop
 - relborder
 
 - sidebar_width
+
+``alabaster/layout.html`` blocks
+--------------------------------
+
+- Stuff inside ``theme_fixed_sidebar``
 
 `basic_layout.html`
 -------------------

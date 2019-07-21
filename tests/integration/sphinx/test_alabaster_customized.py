@@ -9,8 +9,8 @@ pytestmark = pytest.mark.sphinx('html', testroot='alabaster-customized')
 
 
 @pytest.mark.parametrize('page', ['subdir/subfile.html', ], indirect=True)
-class TestAlabasterCustomized:
-    """ Twiddle a bunch of knobs """
+class TestAlabasterCustomizedConf:
+    """ Twiddle a bunch of knobs in the conf file """
 
     def test_touch_icon(self, page):
         icon: Tag = page.find('link', attrs=dict(rel='apple-touch-icon'))
@@ -54,7 +54,31 @@ class TestAlabasterCustomized:
         assert 'Previous document' == this_link['title']
         assert 'index.html' == this_link['href']
 
+
+@pytest.mark.parametrize('page', ['subdir/subfile.html', ], indirect=True)
+class TestAlabasterCustomizedBlocks:
+    """ Use a custom layout.html template to fill some blocks in the contract """
+
     def test_doctype(self, page):
         doctype = [item for item in page.contents if isinstance(item, bs4.Doctype)][0]
         assert 'html' == doctype
 
+    def test_extrahead(self, page):
+        extrahead: Tag = page.find(attrs={'data-testid': 'extrahead'})
+        assert 'http://author1' == extrahead['href']
+
+    def test_relbar1(self, page):
+        relbar1: Tag = page.find(attrs={'data-testid': 'block-relbar1'})
+        assert 'relbar1' == relbar1.text
+
+    def test_relbar2(self, page):
+        relbar2: Tag = page.find(attrs={'data-testid': 'block-relbar2'})
+        assert 'relbar2' == relbar2.text
+
+    def test_content(self, page):
+        content: Tag = page.find(attrs={'data-testid': 'block-content'})
+        assert 'content1' == content.text
+
+    def test_footer(self, page):
+        footer: Tag = page.find(attrs={'data-testid': 'block-footer'})
+        assert 'footer1' == footer.text

@@ -8,9 +8,11 @@
 
     - Write a test to ensure that is generated
     
-- Switch to pyproject.toml
-
 ## Soon
+
+- Get rid of the relbar macro in basic_layout since Alabaster doesn't use it
+
+- Get rid of fixed_sidebar block
 
 - .css_t contracts
 
@@ -23,6 +25,8 @@
 - Get rid of all the ``theme.conf`` knobs for adjusting style colors etc.
 
 ## Eventually
+
+- Switch to pyproject.toml
 
 - Tests and support for ``autodoc`` stuff...punted on this because it requires running an extra command (``sphinx-apidoc``) which isn't supported by the Sphinx pytest fixtures
 
@@ -40,3 +44,4 @@
 
 - Start a diary
 
+- Tests for most known Alabaster/Basic contracts
