@@ -24,6 +24,8 @@
 
 ## Eventually
 
+- Tests and support for ``autodoc`` stuff...punted on this because it requires running an extra command (``sphinx-apidoc``) which isn't supported by the Sphinx pytest fixtures
+
 - Instead of inheriting ``theme.conf`` settings (from either alabaster or basic), flatten the universe
 
 - Put the theme templates in a `templates` directory

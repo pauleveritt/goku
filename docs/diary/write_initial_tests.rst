@@ -178,3 +178,9 @@ Gratipay
 Looks like this is removed but still in the ``theme.conf``.
 Ignoring.
 
+Indices
+=======
+
+Sphinx has a number of common automatically-generated "index" pages: ``genindex``, ``modindex``, ``search``, ``glossary``.
+I set up a test root that enabled all of these, then wrote some tests.
+Setting this up included the ``sys.path`` dance needed for Sphinx to see local source directories.

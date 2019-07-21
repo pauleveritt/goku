@@ -68,3 +68,5 @@ Alabaster ``layout.html``
 - theme_github_banner
 
 - theme_analytics_id
+
+- genindex etc.
