@@ -65,7 +65,7 @@
 
             {%- block relbar_bottom %}
             {%- if theme_show_relbar_bottom|tobool %}
-            <div class="related bottom">
+            <div class="related bottom" data-testid="theme_relbar_bottom">
                 &nbsp;
                 {{- rellink_markup () }}
             </div>

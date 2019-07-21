@@ -39,5 +39,6 @@ html_theme_options = dict(
     ),
     touch_icon='touch_icon1',
     canonical_url='canonical_url1',
-    github_banner='true'
+    github_banner='true',
+    show_relbar_bottom=True
 )

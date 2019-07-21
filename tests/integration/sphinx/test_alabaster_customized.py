@@ -28,3 +28,15 @@ class TestAlabasterCustomized:
     def test_analytics_id(self, page):
         analytics_id: Tag = page.find(attrs={'data-testid': 'theme_analytics_id'})
         assert 'analytics_id1' in analytics_id.text
+
+    def test_relbar_bottom(self, page):
+        """theme_show_relbar_bottom is True, jumps into macro rellink_markup"""
+
+        relbar_bottom: Tag = page.find('div', attrs={'data-testid': 'theme_relbar_bottom'})
+        assert relbar_bottom
+
+        assert 1 == len(relbar_bottom.find_all('a'))
+        first_link: Tag = relbar_bottom.find('a')
+        assert 'index.html' == first_link['href']
+        assert 'Previous document' == first_link['title']
+        assert 'Subdir' == first_link.text

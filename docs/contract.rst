@@ -48,8 +48,6 @@ Drop
 
     - relborder
 
-    - show_related is a boolean used in the CSS template
-
 `basic_layout.html`
 -------------------
 
@@ -105,6 +103,3 @@ Alabaster ``layout.html``
 
 ``alabaster.css_t``
 -------------------
-
-- Replacement for ``show_related`` boolean
-

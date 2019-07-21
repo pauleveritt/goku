@@ -42,7 +42,7 @@ class TestAlabasterLayoutDefaults:
         assert not page.find('div', attrs={'class': 'related top'})
 
     def test_block_relbar_bottom(self, page):
-        """theme_show_relbar_bottom is false"""
+        """theme_show_relbar_bottom is not customized thus false"""
         assert not page.find('div', attrs={'class': 'related bottom'})
 
     def test_footer(self, page):
