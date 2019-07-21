@@ -53,6 +53,7 @@ class TestAlabasterLayoutDefaults:
 
         # See if some of the text nodes and children are present and translated
         assert '©' in footer.contents[0]
+        assert '\n    ©.\n    \n    |\n    Powered by ' == footer.contents[0]
         assert 'http://sphinx-doc.org/' == footer.contents[1]['href']
         assert 'Sphinx' in footer.contents[1].text
 

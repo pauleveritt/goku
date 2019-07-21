@@ -9,12 +9,44 @@ Most of these come from automated tests but it's more convenient to write them h
 Keep
 ====
 
+These all have tests asserting they should be there in goku.
+
 - `custom.css` can be added after the theme CSS and pygments
+
+- Alabaster ``theme.conf`` settings
+
+    - analytics_id, badge_branch, canonical_url, codecov_button, description, donate_url, extra_nav_links
+
+    - github: banner, button, count, repo, type, user
+
+    - logo and logo_name
+
+    - opencollective
+
+
 
 Drop
 ====
 
-- Don't have ``theme.conf`` options for litany of colors (likely move that to SCSS)
+- Alabaster ``theme.conf`` settings (most things moved to SCSS)
+
+    - Litany of colors
+
+    - description_font_style
+
+    - fixed_sidebar
+
+    - gittip
+
+    - gratipay (couldn't find an actual usage of that knob)
+
+    - logo_text_align
+
+    - opencollective_button_color
+
+    - page_width
+
+    - relborder
 
 `basic_layout.html`
 -------------------
@@ -66,7 +98,5 @@ Alabaster ``layout.html``
 - relbar stuff
 
 - theme_github_banner
-
-- theme_analytics_id
 
 - genindex etc.
