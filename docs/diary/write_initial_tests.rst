@@ -196,3 +196,4 @@ You don't put weird classes or ids in just for testing, nor rely on a node struc
 And finally, BeautifulSoup makes it easy to find on these.
 
 I decided to switch to this pattern starting here, with tests for ``analytics_id`` and finishing the ``alabaster/theme.conf`` contract.
+

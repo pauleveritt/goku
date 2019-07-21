@@ -8,5 +8,5 @@ exclude_patterns = ['_build']
 project = 'Goku Sidebars'
 
 html_theme_options = dict(
-    show_powered_by=False
+    show_related=True
 )

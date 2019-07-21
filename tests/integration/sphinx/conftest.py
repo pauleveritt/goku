@@ -44,6 +44,15 @@ def page(content, request) -> BeautifulSoup:
 
 
 @pytest.fixture()
+def css(content, request) -> str:
+    """ Perhaps later, find some CSS Parser """
+    pagename = request.param
+    c = (content.outdir / pagename).text()
+
+    yield c
+
+
+@pytest.fixture()
 def json_page(content, request):
     pagename = request.param
     c = (content.outdir / pagename).text()

@@ -23,7 +23,7 @@ These all have tests asserting they should be there in goku.
 
     - opencollective
 
-
+    - show_powered_by
 
 Drop
 ====
@@ -47,6 +47,8 @@ Drop
     - page_width
 
     - relborder
+
+    - show_related is a boolean used in the CSS template
 
 `basic_layout.html`
 -------------------
@@ -100,3 +102,9 @@ Alabaster ``layout.html``
 - theme_github_banner
 
 - genindex etc.
+
+``alabaster.css_t``
+-------------------
+
+- Replacement for ``show_related`` boolean
+

@@ -75,3 +75,12 @@ class TestAlabasterLayoutDefaults:
 
         # As a note, I added a class to the <script> to make it findable
         assert not page.select_one('script.analytics')
+
+
+@pytest.mark.parametrize('css', ['_static/goku.css', ], indirect=True)
+class TestAlabasterCssDefaults:
+
+    def test_css(self, css):
+        """ Various knobs that affect alabaster.css_t """
+
+        assert 'div.relations' in css
