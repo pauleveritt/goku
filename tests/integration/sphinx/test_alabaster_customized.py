@@ -40,3 +40,15 @@ class TestAlabasterCustomized:
         assert 'index.html' == first_link['href']
         assert 'Previous document' == first_link['title']
         assert 'Subdir' == first_link.text
+
+    def test_relbar_top(self, page):
+        """theme_show_relbar_top is True, jumps into macro rellink_markup"""
+
+        relbar_top: Tag = page.find('div', attrs={'data-testid': 'theme_relbar_top'})
+        assert relbar_top
+
+        assert 1 == len(relbar_top.find_all('a'))
+        first_link: Tag = relbar_top.find('a')
+        assert 'index.html' == first_link['href']
+        assert 'Previous document' == first_link['title']
+        assert 'Subdir' == first_link.text

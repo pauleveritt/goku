@@ -52,7 +52,7 @@
 
             {%- block relbar_top %}
             {%- if theme_show_relbar_top|tobool %}
-            <div class="related top">
+            <div class="related top" data-testid="theme_relbar_top">
                 &nbsp;
                 {{- rellink_markup () }}
             </div>

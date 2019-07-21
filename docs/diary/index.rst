@@ -6,6 +6,13 @@ Lots of decisions made along the way. People might be interested in the
 why as well as the what. Below is a reverse-chronogological order listing
 of summaries with links to longer pages.
 
+Things I Hate
+=============
+
+As I reverse engineer Alabaster into Goku, I will keep notes about painful/irritating things in Sphinx/Jinja2 that I hope to tackle.
+Some of these are the fault of Sphinx, usually due to Sphinx predating so many things.
+But some are just about Jinja2-style (meaning, JSP/ASP style) of UI building. :doc:`More... <things_i_hate>`
+
 Write Initial Tests
 ===================
 
@@ -33,8 +40,6 @@ I needed a basic Python package repo layout with some "stuff". :doc:`More... <pr
 
 .. toctree::
     :hidden:
+    :glob:
 
-    preparation
-    copy_alabaster
-    research_api
-    write_initial_tests
+    *

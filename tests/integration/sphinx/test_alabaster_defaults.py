@@ -37,13 +37,13 @@ class TestAlabasterLayoutDefaults:
         # A div with class and role
         assert 'main' == page.find('div', attrs={'class': 'body'})['role']
 
-    def test_block_relbar_top(self, page):
-        """theme_show_relbar_top is false"""
-        assert not page.find('div', attrs={'class': 'related top'})
-
     def test_block_relbar_bottom(self, page):
         """theme_show_relbar_bottom is not customized thus false"""
-        assert not page.find('div', attrs={'class': 'related bottom'})
+        assert not page.find('div', attrs={'data-testid': 'related bottom'})
+
+    def test_block_relbar_top(self, page):
+        """top is not customized thus false"""
+        assert not page.find('div', attrs={'data-testid': 'related topr'})
 
     def test_footer(self, page):
         """ The footer block """
