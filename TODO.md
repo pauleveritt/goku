@@ -2,13 +2,22 @@
 
 ## Now
 
+- Basic theme
+
+    - blocks
+    
+    - knobs
+
 ## Next
+
+- Sphinx global context values in https://github.com/sphinx-doc/sphinx/blob/c4073eebc358e98912c7e1263dd61b6a87bd24bd/sphinx/builders/html.py#L459
+
+    
+## Soon
 
 - Fix names generated in _build/_static e.g. sphinx_bulma.css -> goku.css
 
     - Write a test to ensure that is generated
-    
-## Soon
 
 - Get rid of the relbar macro in basic_layout since Alabaster doesn't use it
 

@@ -19,3 +19,7 @@ Jinja2 comments.
 
 Having sometimes to wrap the open of a div and the close of a div with a Jinja2 if.
 
+All the ``sys.path.insert`` trickery in ``conf.py.
+
+Special Jinja2 symbols with weird behavior that breaks my IDE, such as ``{% extends "!layout.html" %}``
+

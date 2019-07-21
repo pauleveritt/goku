@@ -110,31 +110,18 @@ To Do
 
 - html_baseurl and pageurl -> <link rel="canonical">
 
-- use_opensearch
-
 - Everything here: https://github.com/sphinx-doc/sphinx/blob/c4073eebc358e98912c7e1263dd61b6a87bd24bd/sphinx/builders/html.py#L459
 
-- link prev/next
-
-- block extrahead
-
 - body_tag
-
-- block header, relbar1, sidebar1
-
-- document block
 
 
 Alabaster ``layout.html``
 -------------------------
 
-- theme_touch_icon
-
-- relbar stuff
-
-- theme_github_banner
-
 - genindex etc.
+
+- use_opensearch
+
 
 ``alabaster.css_t``
 -------------------
