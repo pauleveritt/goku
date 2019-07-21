@@ -18,6 +18,15 @@ These all have tests asserting they should be there in goku.
 
 - html5_doctype
 
+Basic
+-----
+
+- Everything here: https://github.com/sphinx-doc/sphinx/blob/c4073eebc358e98912c7e1263dd61b6a87bd24bd/sphinx/builders/html.py#L459
+
+- Helper functions: www.sphinx-doc.org/en/master/templating.html#helper-functions
+
+- Global and page variables: www.sphinx-doc.org/en/master/templating.html#global-variables
+
 ``alabaster/theme.conf`` settings
 ---------------------------------
 
@@ -88,7 +97,7 @@ Drop
 `basic_layout.html`
 -------------------
 
-- ` old style sidebars: using blocks -- should be deprecated``
+- `` old style sidebars: using blocks -- should be deprecated``
 
 To Do
 =====
@@ -102,15 +111,11 @@ To Do
 
 - New-style sidebars
 
-- jstag()
-
-- css_files
+- js_tag()
 
 - html_tag
 
 - html_baseurl and pageurl -> <link rel="canonical">
-
-- Everything here: https://github.com/sphinx-doc/sphinx/blob/c4073eebc358e98912c7e1263dd61b6a87bd24bd/sphinx/builders/html.py#L459
 
 - body_tag
 

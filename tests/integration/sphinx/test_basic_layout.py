@@ -155,11 +155,13 @@ class TestBasicThemeGlobals:
         'target, expected',
         [
             ('builder', 'html'),
+            ('css_files', '[]'),
             ('copyright', ''),
             ('docstitle', ''),
             ('embedded', 'False'),
             ('favicon', ''),
             ('file_suffix', '.html'),
+            ('html5_doctype', 'None'),
             ('has_source', 'True'),
             ('language', 'None'),
             ('last_updated', 'None'),
@@ -170,6 +172,9 @@ class TestBasicThemeGlobals:
             ('release', ''),
             ('shorttitle', ''),
             ('show_source', 'True'),
+            ('show_sphinx', 'True'),
+            ('sourcelink_suffix', '.txt'),
+            ('show_copyright', ''),
             ('style', 'goku.css'),
             ('title', 'Hello World'),
             ('use_opensearch', ''),
@@ -187,6 +192,11 @@ class TestBasicThemeGlobals:
     def test_sphinx_version(self, page):
         t: Tag = page.find('div', attrs={'data-testid': f'global-sphinx_version'})
         assert t.text.startswith('1')
+
+    def test_script_files(self, page):
+        t: Tag = page.find('div', attrs={'data-testid': f'global-script_files'})
+        assert 'jquery.js' in t.text
+
 
 @pytest.mark.parametrize('page', ['index.html', ], indirect=True)
 class TestBasicThemePage:
